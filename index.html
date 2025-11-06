@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="H&N Yapı Teknik - Tel örgü, panel çit, kaynak, tadilat, montaj ve onarım hizmetlerinde profesyonel çözümler." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b5f41" />
+  <title>H&N Yapı Teknik | Profesyonel Yapı ve Montaj Hizmetleri</title>
+  <link rel="icon" href="logo.png" type="image/png" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f2f7f5;
+      color: #0b2e20;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* === Video Arka Plan === */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.45);
+    }
+
+    header {
+      background: rgba(11, 95, 65, 0.9);
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(6px);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .menu a:hover {
+      color: #d1ffec;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+		  height: auto;
+        background: rgba(11, 95, 65, 0.95);
+        flex-direction: column;
+        display: none;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+
+    section.white-bg {
+      background: rgba(255, 255, 255, 0.95);
+      color: #0b2e20;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #d1ffec;
+      margin-bottom: 20px;
+    }
+
+    .white-bg h2 {
+      color: #0b5f41;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(200px, 1fr)); /* her kutu min 200px olur */
+  gap: 10px; /* resimler arası boşluk */
+  padding: 10px;
+}
+
+.gallery img {
+  width: 100%;      /* genişlik kutuya tam oturur */
+  height: 200px;    /* sabit yükseklik */
+  object-fit: cover; /* resmi kırparak sığdırır */
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+    .contact-form {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .contact-form button {
+      background: #0b5f41;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #12855d;
+    }
+
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: rgba(11, 95, 65, 0.9);
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1ebd5a;
+    }
+
+    @media (max-width: 480px) {
+      .whatsapp-btn {
+        bottom: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔹 Video Arka Plan -->
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="../tel-foto/background.mp4" type="video/mp4" />
+  </video>
+
+  <!-- 🔹 Header -->
+  <header>
+    <div class="logo">
+      <img src="../tel-foto/logo.png"logo.png"" alt="H&N Yapı Teknik Logosu">
+      <h1>H&N Yapı Teknik</h1>
+    </div>
+    <div class="menu-toggle">☰</div>
+    <nav class="menu">
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+  </header>
+
+  <!-- 🔹 Hakkımızda -->
+  <section id="hakkimizda">
+    <h2>Hakkımızda</h2>
+    <p>H&N Yapı Teknik; tel örgü, panel çit, kaynak, tadilat ve montaj alanlarında profesyonel çözümler sunar. Uzman ekibimizle estetik, güvenli ve uzun ömürlü yapılar inşa ediyoruz.</p>
+  </section>
+
+  <!-- 🔹 Hizmetler -->
+  <section id="hizmetler" class="white-bg">
+    <h2>Hizmetlerimiz</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Tel Örgü & Panel Çit</h3>
+        <p>Bahçe, arsa ve sanayi alanları için dayanıklı çit sistemleri.</p>
+      </div>
+      <div class="service-card">
+        <h3>Kaynak & Demir İşleri</h3>
+        <p>Her türlü kaynak ve demir montajında profesyonel uygulamalar.</p>
+      </div>
+      <div class="service-card">
+        <h3>Tadilat & Onarım</h3>
+        <p>Ev, iş yeri ve dış mekanlarda kaliteli onarım çözümleri.</p>
+      </div>
+      <div class="service-card">
+        <h3>Montaj Hizmetleri</h3>
+        <p>Yapısal eleman ve ekipmanların profesyonel montaj hizmeti.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Galeri -->
+  <section id="galeri">
+    <h2>Galeri</h2>
+    <div class="services gallery">
+      <img src="../tel-foto/f3.jpg"f1.jpg"" alt="Tel Örgü Örneği" loading="lazy">
+      <img src="../tel-foto/f1.jpg" alt="Panel Çit Uygulaması" loading="lazy">
+      <img src="../tel-foto/düzjiletli.jpg"f3.jpg"" alt="Kaynak Çalışması" loading="lazy">
+		<img src="../tel-foto/f24.jpg" alt="Tel Örgü Örneği" loading="lazy">
+      <img src="../tel-foto/f25.jpg" alt="Panel Çit Uygulaması" loading="lazy">
+      <img src="../tel-foto/f21.jpg" alt="Kaynak Çalışması" loading="lazy">
+		<img src="../tel-foto/tinyhouse.jpg" alt="Tel Örgü Örneği" loading="lazy">
+      <img src="../tel-foto/f2.jpg" alt="Panel Çit Uygulaması" loading="lazy">
+      <img src="../tel-foto/ferforce.jpg" alt="Kaynak Çalışması" loading="lazy">
+		<img src="../tel-foto/bungalov.jpg" alt="Tel Örgü Örneği" loading="lazy">
+      <img src="../tel-foto/f15.jpg" alt="Panel Çit Uygulaması" loading="lazy">
+      <img src="../tel-foto/f11.jpg" alt="Kaynak Çalışması" loading="lazy">
+    </div>
+  </section>
+
+  <!-- 🔹 İletişim -->
+  <section id="iletisim" class="white-bg">
+    <h2>İletişim</h2>
+    <div class="contact-form">
+      <form action="https://formspree.io/f/xqakjznd" method="POST">
+        <input type="text" name="name" placeholder="Ad Soyad" required>
+        <input type="email" name="email" placeholder="E-posta" required>
+        <input type="tel" name="phone" placeholder="Telefon (5xx xxx xx xx)" pattern="[0-9\s\+]{10,}" required>
+        <textarea name="message" rows="4" placeholder="Mesajınız..." required></textarea>
+        <button type="submit">Gönder</button>
+      </form>
+    </div>
+
+    <!-- 🔹 Google Maps -->
+    <iframe
+      src="https://www.google.com/maps?q=Çamyuva%20Hayıtlıgöl%20Mahallesi%205104%20Sokak%20No:1%20Kemer%2FANTALYA&output=embed"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- 🔹 Footer -->
+  <footer>
+    <p>© 2025 H&N Yapı Teknik | Tüm Hakları Saklıdır</p>
+  </footer>
+
+  <!-- 🔹 WhatsApp Butonu -->
+  <a href="https://wa.me/905364335452" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    toggle.addEventListener('click', () => menu.classList.toggle('active'));
+  </script>
+
+</body>
+</html>
